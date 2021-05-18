@@ -7,13 +7,10 @@ import { ProjCard } from "../components/UI/ProjCard";
 import { projects } from "../components/data/projects";
 import ContactMe from "../components/ContactMe";
 import Field from "../components/UI/Field";
+import DescriptionField from "../components/DescriptionField";
 
 export default function index() {
   const [apear] = useSprings(4, (index) => ({
-    // onStart: () => {
-    //   console.log(index);
-    //   console.log("apearindex ", apear[index]);
-    // },
     from: {
       opacity: 0,
     },
@@ -37,13 +34,10 @@ export default function index() {
           <Field className="h-72 md:h-full md:w-1/3" style={apear[0]}>
             <img className="" alt="Omid Neshati photo"></img>
           </Field>
-          <Field
+          <DescriptionField
             className="text-right h-96 md:h-full md:w-2/3"
             style={apear[1]}
-          >
-            <h1>امید نشاطی</h1>
-            <p>fff</p>
-          </Field>
+          />
         </div>
         <Field className="w-full space-y-4" style={apear[2]}>
           <h2 className="text-right text-2xl font-bold">نمونه کار</h2>
