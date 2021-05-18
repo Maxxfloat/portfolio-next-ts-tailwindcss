@@ -19,7 +19,9 @@ const DescriptionField: React.FC<cardContentType> = ({
   const [flip, setFlip] = useState(false);
 
   const side = (style, content: string) => (
-    <div className={`${style} absolute w-full h-full p-5 box-border`}>
+    <div
+      className={`${style} bg-gray-100 rounded-3xl bg-opacity-100 absolute w-full h-full p-5 box-border`}
+    >
       <div className="h-2/3 block">{content}</div>
       <div className="flex space-x-3 p-3 box-border justify-center h-1/3">
         <button onClick={() => setFlip(true)} className="border-black border-2">
@@ -39,10 +41,10 @@ const DescriptionField: React.FC<cardContentType> = ({
           className={`
             ${s.inner} 
             ${flip ? s.flip : ""}
-            bg-gray-100 box-border shadow-md rounded-3xl relative w-full h-full `}
+            box-border shadow-md rounded-3xl relative w-full h-full `}
         >
-          {side(s.back, "back")}
           {side(s.front, "front")}
+          {side(s.back, "back")}
         </div>
       </animated.div>
     </>
