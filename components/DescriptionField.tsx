@@ -27,7 +27,6 @@ const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
     return (
       <div
         className={`${style} bg-gray-100 rounded-t-3xl bg-opacity-100 absolute w-full h-full p-5 box-border`}
-        style={{ boxShadow: "0 4px -1px -1px rgba(0, 0, 0, 0.1)" }}
       >
         <div className="h-3/4 block">{content}</div>
         <div className="flex justify-around space-x-2 items-center p-3 box-border h-1/4">
@@ -75,7 +74,7 @@ const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
           {side(s.front, "front")}
           {side(s.back, "back")}
         </div>
-        <div className="flex justify-around space-x-1 items-center box-border rounded-b-3xl w-full h-auto bg-gray-100 bg-opacity-100 overflow-hidden shadow-md">
+        <div className="flex justify-around items-end box-border rounded-b-3xl w-full h-1/5 bg-gray-100 bg-opacity-100 overflow-hidden shadow-md">
           {sideBtns.map((btn, index) => (
             <button
               key={index}

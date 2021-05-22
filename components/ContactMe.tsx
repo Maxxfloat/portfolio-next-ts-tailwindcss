@@ -6,6 +6,7 @@ const ContactMe = () => {
     {
       logo: <IoIosCall className="" />,
       text: "0903 195 1624",
+      href: "tel:0903-195-1624",
     },
     {
       logo: <IoLogoWhatsapp className="text-green-500" />,
@@ -14,6 +15,7 @@ const ContactMe = () => {
     {
       logo: <SiGmail className="text-red-600" />,
       text: "tchandnofame@gamil.com",
+      href: "mailto:tchandnofame@gamil.com",
     },
   ];
   return (
@@ -21,9 +23,9 @@ const ContactMe = () => {
       {list.map((item, index) => (
         <li key={index} className="my-2 flex items-center">
           <span className="inline-block ml-4 text-xl">{item.logo}</span>
-          <p className="inline-block " dir="ltr">
+          <a className="inline-block " dir="ltr" href={item.href}>
             {item.text}
-          </p>
+          </a>
         </li>
       ))}
     </ul>
