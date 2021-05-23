@@ -2,10 +2,17 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      direction: {
+        "dir-rtl": "rtl",
+      },
+    },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ["active"],
+      borderColor: ["active"],
+    },
   },
   plugins: [],
 };

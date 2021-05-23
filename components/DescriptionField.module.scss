@@ -1,0 +1,24 @@
+.card {
+  perspective: 1000px;
+}
+
+.inner {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition-property: transform;
+  transition-duration: 1s;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.back,
+.front {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
