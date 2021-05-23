@@ -3,8 +3,6 @@ import { animated } from "react-spring";
 import s from "./DescriptionField.module.scss";
 
 interface cardContentType {
-  front?: JSX.Element;
-  back?: JSX.Element;
   className: string;
   style: object;
 }
