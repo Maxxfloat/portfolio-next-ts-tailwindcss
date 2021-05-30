@@ -2,12 +2,12 @@ import React from "react";
 import { Fragment } from "react";
 import { useSprings } from "react-spring";
 
-import Layout from "../components/Layout";
-import { ProjCard } from "../components/UI/ProjCard";
-import { projects } from "../components/data/projects";
-import ContactMe from "../components/ContactMe";
-import Field from "../components/UI/Field";
-import DescriptionField from "../components/DescriptionField";
+import Layout from "components/Layout";
+import { ProjCard } from "components/UI/ProjCard";
+import { projects } from "components/data/projects";
+import ContactMe from "components/ContactMe";
+import Field from "components/UI/Field";
+import DescriptionField from "components/DescriptionField";
 
 export default function index() {
   const [apear] = useSprings(4, (index) => ({
