@@ -29,7 +29,7 @@ export default function index() {
 
   return (
     <Layout>
-      <div className="md:w-3/4 xl:w-2/3 2xl:w-1/2 space-y-6 m-6 z-10">
+      <div className="md:w-11/12 xl:w-2/3 2xl:w-1/2 space-y-6 m-6 z-10">
         <div className="space-y-6 flex flex-col md:space-x-8 md:flex-row md:h-80 md:space-y-0 ">
           <Field className="h-72 md:h-full md:w-1/3" style={apear[0]}>
             <img className="" alt="Omid Neshati photo"></img>

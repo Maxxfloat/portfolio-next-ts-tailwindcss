@@ -46,9 +46,9 @@ const Layout: React.FC = ({ children }) => {
             line_linked: {
               enable: true,
               distance: 70,
-              opacity: 0.6,
+              opacity: 0.8,
               color: "#000000",
-              width: 2,
+              width: 1.2,
             },
             move: {
               speed: 0.2,

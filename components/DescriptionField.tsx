@@ -10,24 +10,26 @@ interface cardContentType {
 const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
   const [flip, setFlip] = useState(false);
 
-  const side = (style: string, header: string, paragraphs: string[]) => {
+  const side = (
+    style: string,
+    header: string,
+    paragraphs: string[],
+    component?: JSX.Element
+  ) => {
     return (
       <div
-        className={`${style} bg-gray-100 rounded-t-3xl bg-opacity-100 absolute w-full h-full p-5 box-border`}
+        className={`${style} bg-gray-100 rounded-t-3xl bg-opacity-100 absolute w-full h-full p-5 pb-0 box-border`}
       >
-        <div className="h-3/4 block">
-          <div dir="rtl" className="space-y-2 px-3 box-border">
-            <h3 className="font-bold text-2xl">{header}</h3>
-            {paragraphs.map((text, i) => (
-              <p
-                key={i}
-                className="text-justify"
-                dir={text.includes("React") ? "ltr" : ""}
-              >
-                {text}
-              </p>
-            ))}
-            {/* <p className="text-justify">
+        {/* <div className="block"> */}
+        <div dir="rtl" className="space-y-2 px-3 box-border h-full">
+          <h3 className="font-bold text-2xl">{header}</h3>
+          {paragraphs.map((text, i) => (
+            <p key={i} className="text-justify ">
+              {text}
+            </p>
+          ))}
+          {component}
+          {/* <p className="text-justify">
               ساکن شهر دزفول استان خوزستان ۲۳ سال دارم و به مدت دوسال است که
               مشغول به توسعه وب سایت هستم
             </p>
@@ -40,8 +42,8 @@ const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
               در حال حاضر اشتیاق زیادی برای کسب تجربه و کار با یک تیم متخصص را
               دارم
             </p> */}
-          </div>
         </div>
+        {/* </div> */}
       </div>
     );
   };
@@ -69,25 +71,55 @@ const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
   ];
   const techSide = [
     "تا به این لحظه تکنولوژی ها و پکیج هایی که از آن ها استفاده کرده‌ام شامل:",
-    "React, Redux, NextJS, TypeScript, Git, Axios, Sass, BootStrap, TailwindCss, MaterialUI, react-hook-form, react-table, react-spring",
   ];
-
+  const techs = [
+    "React",
+    "Redux",
+    "NextJS",
+    "TypeScript",
+    "Git",
+    "Axios",
+    "Sass",
+    "BootStrap",
+    "MaterialUI",
+    "TailwindCss",
+    "react-hook-form",
+    "react-spring",
+    "react-table",
+  ];
+  const techList = (
+    <div className="">
+      <ul
+        className="flex flex-wrap flex-col max-h-48 md:max-h-40 overflow-x-scroll"
+        dir="ltr"
+      >
+        {techs.map((tech) => (
+          <li
+            key={tech}
+            className="w-32 md:w-24 xl:w-38 inline-block text-left"
+          >
+            {tech}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
   return (
     <>
       <animated.div
-        className={`${className} ${s.card} bg-transparent `}
+        className={`${className} ${s.card} bg-transparent`}
         style={style}
       >
         <div
           className={`
             ${s.inner} 
             ${flip ? s.flip : ""}
-            box-border relative w-full h-4/5 `}
+            box-border relative w-full h-5/6 md:h-4/5 `}
         >
           {side(s.front, "امید نشاطی", aboutMeSide)}
-          {side(s.back, "مهارت های من", techSide)}
+          {side(s.back, "مهارت های من", techSide, techList)}
         </div>
-        <div className="flex justify-around items-end box-border rounded-b-3xl w-full h-1/5 bg-gray-100 bg-opacity-100 overflow-hidden shadow-md">
+        <div className="flex justify-around items-end box-border rounded-b-3xl w-full h-1/6 md:h-1/5 bg-gray-100 bg-opacity-100 overflow-hidden shadow-md">
           {sideBtns.map((btn, index) => (
             <button
               key={index}
