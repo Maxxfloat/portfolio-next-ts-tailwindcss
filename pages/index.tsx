@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 import { useSprings } from "react-spring";
 
-import Layout from "../components/Layout";
-import { ProjCard } from "../components/UI/ProjCard";
-import { projects } from "../components/data/projects";
-import ContactMe from "../components/ContactMe";
-import Field from "../components/UI/Field";
-import DescriptionField from "../components/DescriptionField";
+import Layout from "components/Layout";
+import { ProjCard } from "components/UI/ProjCard";
+import { projects } from "components/data/projects";
+import ContactMe from "components/ContactMe";
+import Field from "components/UI/Field";
+import DescriptionField from "components/DescriptionField";
 
 export default function index() {
   const [apear] = useSprings(4, (index) => ({
@@ -28,7 +28,7 @@ export default function index() {
 
   return (
     <Layout>
-      <div className="md:w-3/4 xl:w-2/3 2xl:w-1/2 space-y-6 m-6 z-10">
+      <div className="md:w-11/12 xl:w-2/3 2xl:w-1/2 space-y-6 m-6 z-10">
         <div className="space-y-6 flex flex-col md:space-x-8 md:flex-row md:h-80 md:space-y-0 ">
           <Field className="h-72 md:h-full md:w-1/3" style={apear[0]}>
             <img

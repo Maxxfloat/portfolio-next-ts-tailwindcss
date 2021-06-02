@@ -25,6 +25,7 @@ const Layout: React.FC = ({ children }) => {
             },
             shape: {
               type: "triangle",
+              polygon: { sides: 6, fill: true },
             },
             opacity: {
               value: 0.8,
@@ -34,7 +35,7 @@ const Layout: React.FC = ({ children }) => {
               },
             },
             size: {
-              value: 10,
+              value: 7,
               random: true,
               anim: {
                 enable: true,
@@ -45,8 +46,9 @@ const Layout: React.FC = ({ children }) => {
             line_linked: {
               enable: true,
               distance: 70,
-              opacity: 0.6,
+              opacity: 0.8,
               color: "#000000",
+              width: 1.2,
             },
             move: {
               speed: 0.2,
