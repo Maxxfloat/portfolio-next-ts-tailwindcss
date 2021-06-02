@@ -30,15 +30,18 @@ export default function index() {
     <Layout>
       <div className="md:w-11/12 xl:w-2/3 2xl:w-1/2 space-y-6 m-6 z-10">
         <div className="space-y-6 flex flex-col md:space-x-8 md:flex-row md:h-80 md:space-y-0 ">
-          <Field className="h-72 md:h-full md:w-1/3" style={apear[0]}>
+          <Field
+            className="h-72 flex justify-center items-center md:h-full md:w-1/4"
+            style={apear[0]}
+          >
             <img
-              src="omid-neshati.jpg"
-              className=""
+              src="omid-neshati.png"
+              className="max-h-full max-w-full rounded-xl"
               alt="Omid Neshati photo"
             ></img>
           </Field>
           <DescriptionField
-            className="text-right h-96 md:h-full md:w-2/3"
+            className="text-right h-96 md:h-full md:w-3/4"
             style={apear[1]}
           />
         </div>

@@ -24,7 +24,7 @@ const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
         <div dir="rtl" className="space-y-2 px-3 box-border h-full">
           <h3 className="font-bold text-2xl">{header}</h3>
           {paragraphs.map((text, i) => (
-            <p key={i} className="text-justify ">
+            <p key={i} className="text-justify">
               {text}
             </p>
           ))}
@@ -89,10 +89,7 @@ const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
   ];
   const techList = (
     <div className="">
-      <ul
-        className="flex flex-wrap flex-col max-h-48 md:max-h-40 overflow-x-scroll"
-        dir="ltr"
-      >
+      <ul className="flex flex-wrap flex-col max-h-48 md:max-h-40" dir="ltr">
         {techs.map((tech) => (
           <li
             key={tech}
