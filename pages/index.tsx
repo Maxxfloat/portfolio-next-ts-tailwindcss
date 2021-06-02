@@ -34,11 +34,13 @@ export default function index() {
             className="h-72 flex justify-center items-center md:h-full md:w-1/4"
             style={apear[0]}
           >
-            <img
-              src="omid-neshati.png"
-              className="max-h-full max-w-full rounded-xl"
-              alt="Omid Neshati photo"
-            ></img>
+            <a href="/omid-neshati.png" target="_blank">
+              <img
+                src="omid-neshati.png"
+                className="max-h-full max-w-full rounded-xl"
+                alt="Omid Neshati photo"
+              ></img>
+            </a>
           </Field>
           <DescriptionField
             className="text-right h-96 md:h-full md:w-3/4"
