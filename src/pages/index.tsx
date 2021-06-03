@@ -31,17 +31,13 @@ export default function index() {
       <div className="md:w-11/12 xl:w-2/3 2xl:w-2/3 space-y-6 m-6 z-10">
         <div className="space-y-6 flex flex-col md:space-x-8 md:flex-row md:h-80 md:space-y-0 ">
           <Field
-            className="h-72 flex justify-center items-center md:h-full md:w-1/4"
+            className="h-80 flex justify-center items-center md:h-full md:w-1/4"
             style={apear[0]}
           >
-            <a
-              className="h-full mx-auto"
-              href="/omid-neshati.png"
-              target="_blank"
-            >
+            <a className="h-full" href="/omid-neshati.png" target="_blank">
               <img
                 src="omid-neshati.png"
-                className="max-h-full max-w-full rounded-xl"
+                className="h-full max-w-full rounded-xl"
                 alt="Omid Neshati photo"
               ></img>
             </a>

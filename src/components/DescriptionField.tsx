@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { animated } from "react-spring";
-import s from "./DescriptionField.module.scss";
 
 interface cardContentType {
   className: string;
@@ -11,7 +10,7 @@ const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
   const [flip, setFlip] = useState(false);
 
   const side = (
-    style: string,
+    backside: boolean,
     header: string,
     paragraphs: string[],
     component?: JSX.Element
@@ -19,15 +18,22 @@ const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
     return (
       <div
         className={`${style} bg-gray-100 rounded-t-3xl bg-opacity-100 absolute w-full h-full p-5 pb-0 box-border`}
+        style={{
+          WebkitBackfaceVisibility: "hidden",
+          backfaceVisibility: "hidden",
+          transform: backside ? "rotateY(180deg)" : "none",
+        }}
       >
         {/* <div className="block"> */}
         <div dir="rtl" className="space-y-2 px-3 box-border h-full">
-          <h3 className="font-bold text-2xl">{header}</h3>
-          {paragraphs.map((text, i) => (
-            <p key={i} className="text-justify">
-              {text}
-            </p>
-          ))}
+          <h3 className="font-bold text-2xl md:mb-4">{header}</h3>
+          <div className="md:px-4 md:space-y-3">
+            {paragraphs.map((text, i) => (
+              <p key={i} className="text-justify">
+                {text}
+              </p>
+            ))}
+          </div>
           {component}
           {/* <p className="text-justify">
               ساکن شهر دزفول استان خوزستان ۲۳ سال دارم و به مدت دوسال است که
@@ -88,12 +94,12 @@ const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
     "react-table",
   ];
   const techList = (
-    <div className="">
-      <ul className="flex flex-wrap flex-col max-h-48 md:max-h-40" dir="ltr">
+    <div className="h-2/3">
+      <ul className="flex flex-wrap flex-col h-full" dir="ltr">
         {techs.map((tech) => (
           <li
             key={tech}
-            className="w-32 md:w-24 xl:w-38 inline-block text-left"
+            className="w-32 md:w-36 xl:w-38 inline-block text-left"
           >
             {tech}
           </li>
@@ -104,17 +110,23 @@ const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
   return (
     <>
       <animated.div
-        className={`${className} ${s.card} bg-transparent`}
-        style={style}
+        className={`${className} bg-transparent`}
+        style={{ ...style, perspective: "1000px" }}
       >
         <div
           className={`
-            ${s.inner} 
-            ${flip ? s.flip : ""}
+          
             box-border relative w-full h-5/6 md:h-4/5 `}
+          style={{
+            WebkitTransformStyle: "preserve-3d",
+            transformStyle: "preserve-3d",
+            transitionProperty: "transform",
+            transitionDuration: "1s",
+            transform: flip ? " rotateY(180deg)" : "none",
+          }}
         >
-          {side(s.front, "امید نشاطی", aboutMeSide)}
-          {side(s.back, "مهارت های من", techSide, techList)}
+          {side(false, "امید نشاطی", aboutMeSide)}
+          {side(true, "مهارت های من", techSide, techList)}
         </div>
         <div className="flex justify-around items-end box-border rounded-b-3xl w-full h-1/6 md:h-1/5 bg-gray-100 bg-opacity-100 overflow-hidden shadow-md">
           {sideBtns.map((btn, index) => (
