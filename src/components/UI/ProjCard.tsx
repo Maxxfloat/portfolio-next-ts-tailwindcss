@@ -17,12 +17,12 @@ export const ProjCard: React.FC<ProjCard> = ({
 }) => {
   return (
     <div className="bg-gray-200 flex flex-col rounded-xl shadow-md overflow-hidden space-y-4 md:flex-row">
-      <div className="w-1/3 md:w-2/4 h-full">
+      <div className="h-52 md:w-2/4 md:h-full">
         <a href={link} target="_blank">
           <img className="w-full h-full" src={imgSrc} alt={imgAlt} />
         </a>
       </div>
-      <div className="mx-auto p-3 space-y-4">
+      <div className=" mx-auto p-3 space-y-4">
         <h3 className="font-bold">{projName}</h3>
         <div className="">
           <h4 className="text-right">تکنولوژی ها و پکیج های استفاده شده</h4>

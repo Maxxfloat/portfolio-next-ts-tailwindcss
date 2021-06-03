@@ -21,11 +21,11 @@ const ContactMe = () => {
   return (
     <ul>
       {list.map((item, index) => (
-        <li key={index} className="my-2 flex items-center">
-          <span className="inline-block ml-4 text-xl">{item.logo}</span>
-          <a className="inline-block " dir="ltr" href={item.href}>
+        <li key={index} className="my-2 flex items-center justify-end">
+          <a className="inline-block" href={item.href}>
             {item.text}
           </a>
+          <span className="inline-block mr-4 text-xl">{item.logo}</span>
         </li>
       ))}
     </ul>
