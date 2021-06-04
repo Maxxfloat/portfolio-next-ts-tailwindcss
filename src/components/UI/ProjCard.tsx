@@ -17,7 +17,6 @@ export const ProjCard: React.FC<ProjCard> = ({
   projDescription,
   index,
 }) => {
-  console.log("index: ", index);
   return (
     <div
       className={`bg-gray-200 flex flex-col rounded-xl shadow-md overflow-hidden space-y-4
