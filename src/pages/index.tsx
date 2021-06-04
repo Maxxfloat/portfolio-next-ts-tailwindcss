@@ -50,9 +50,9 @@ export default function index() {
         <Field className="w-full space-y-4" style={apear[2]}>
           <h2 className="text-right text-2xl font-bold">نمونه کار</h2>
           <div className="grid grid-cols-1 gap-4">
-            {projects.map((proj) => (
+            {projects.map((proj, index) => (
               <Fragment key={proj.projName}>
-                <ProjCard {...proj} />
+                <ProjCard {...proj} index={index} />
               </Fragment>
             ))}
           </div>

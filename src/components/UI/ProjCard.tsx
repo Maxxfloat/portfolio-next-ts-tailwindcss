@@ -5,6 +5,7 @@ interface ProjCard {
   link: string;
   projTechUsed: string[];
   projDescription: string;
+  index: number;
 }
 
 export const ProjCard: React.FC<ProjCard> = ({
@@ -14,9 +15,15 @@ export const ProjCard: React.FC<ProjCard> = ({
   link,
   projTechUsed,
   projDescription,
+  index,
 }) => {
+  console.log("index: ", index);
   return (
-    <div className="bg-gray-200 flex flex-col rounded-xl shadow-md overflow-hidden space-y-4 md:flex-row">
+    <div
+      className={`bg-gray-200 flex flex-col rounded-xl shadow-md overflow-hidden space-y-4
+      ${(index + 1) % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"}
+      `}
+    >
       <div className="h-52 md:w-2/4 md:h-full">
         <a href={link} target="_blank">
           <img className="w-full h-full" src={imgSrc} alt={imgAlt} />
