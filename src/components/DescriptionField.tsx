@@ -110,7 +110,7 @@ const DescriptionField: React.FC<cardContentType> = ({ className, style }) => {
   return (
     <>
       <animated.div
-        className={`${className} bg-transparent`}
+        className={`${className} bg-transparent pointer-events-auto`}
         style={{ ...style, perspective: "1000px" }}
       >
         <div
